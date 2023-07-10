@@ -1,11 +1,13 @@
-package de.neueFische;
+package de.neueFische.model;
+
+import java.util.Objects;
 
 public class Student {
 
-    private String name;
-    private int matrikelNo;
-    public String studiengang;
-    public int anzahlDerStudSemester;
+    protected String name;
+    protected int matrikelNo;
+    protected String studiengang;
+    protected int anzahlDerStudSemester;
 
 
     public Student(){
@@ -57,5 +59,28 @@ public class Student {
 
     public void setAnzahlDerStudSemester(int anzahlDerStudSemester){
         this.anzahlDerStudSemester = anzahlDerStudSemester;
+    }
+
+    @Override
+    public String toString(){
+        return "{Student"+
+                "Name: "+name+
+                "Matrikelnummer: "+matrikelNo+
+                "Studiengang: "+studiengang+
+                "Anzahl der stud. Semester: "+anzahlDerStudSemester+
+                "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return matrikelNo == student.matrikelNo && anzahlDerStudSemester == student.anzahlDerStudSemester && Objects.equals(name, student.name) && Objects.equals(studiengang, student.studiengang);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, matrikelNo, studiengang, anzahlDerStudSemester);
     }
 }

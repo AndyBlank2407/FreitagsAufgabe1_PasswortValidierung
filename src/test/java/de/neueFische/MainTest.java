@@ -1,10 +1,28 @@
 package de.neueFische;
 
+import de.neueFische.model.Student;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
+
+
+
+    @Test
+    void equalsMitZweiObjekten(){
+        //given
+        Student stud1 = new Student("Peter Pan", 12345, "Informatik", 4);
+        Student stud2 = new Student("Peter Pan", 12345, "Informatik", 4);
+        boolean solution = true;
+
+        //when
+         boolean actual = stud1.equals(stud2);
+
+        //then
+        assertTrue(actual);
+
+    }
 
     @Test
     void passwLengthChecked_With7Chars(){

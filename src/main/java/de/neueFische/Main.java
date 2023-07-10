@@ -1,6 +1,7 @@
 package de.neueFische;
 
 
+import de.neueFische.model.Student;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -12,14 +13,18 @@ public class Main {
 
         Student studX = new Student();
 
+
         studX.setName("Johnny Knoxville");
         studX.setAnzahlDerStudSemester(3);
         studX.setMatrikelNo(23454545);
         studX.setStudiengang("Angewandte Informatik");
 
+
+
         Student studY = new Student("Josef Zimmermann", "Umwelttechnik", 34353, 5);
 
-        System.out.println(studY.getName()+" "+ studY.getStudiengang()+" "+studY.getMatrikelNo()+" "+studY.getAnzahlDerStudSemester());
+        System.out.println(studX);//in der Prinln-Methode ist definiert, dass sie "toString" aufruft...
+        // darum ruft "println" die überschriebene "toString-Methode" automatisch auf.
 
     }
 
@@ -31,7 +36,7 @@ public class Main {
     public static boolean passwLength(String password) {
 
         if (password.length() < 8) {
-            System.out.println("Passwort ist genug lang (über 8 Stellen.");
+            System.out.println("Passwort ist genug lang (über 8 Stellen).");
             return false;
 
         }
