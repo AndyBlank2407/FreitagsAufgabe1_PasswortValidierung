@@ -10,13 +10,13 @@ class MainTest {
     void passwLengthChecked_With7Chars(){
         //given
         String password = "kkkkkkk";
-        String solution = "Passwort nicht sicher. Passwort muss mindestens 8 Stellen haben!";
+        boolean solution = false;
 
         //when
-        String actual = Main.passwLength(password);
+        boolean actual = Main.passwLength(password);
 
         //then
-        assertEquals(solution, actual);
+        assertFalse(solution);
 
     }
 
@@ -24,13 +24,13 @@ class MainTest {
     void passwLengthChecked_With8Chars(){
         //given
         String password = "kkkkkkkk";
-        String solution ="Passwort ist genug lang (über 8 Stellen.";
+        boolean solution = true;
 
         //when
-        String actual = Main.passwLength(password);
+        boolean actual = Main.passwLength(password);
 
         //then
-        assertEquals(solution, actual);
+        assertTrue(solution);
 
     }
 

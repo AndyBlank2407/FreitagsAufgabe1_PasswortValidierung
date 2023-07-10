@@ -5,17 +5,20 @@ package de.neueFische;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        System.out.println(goodPassWord("0000000011"));
+        System.out.println(passwordValid("12345678"));
     }
 
 
-    public static String passwLength(String password) {
+    public static boolean passwLength(String password) {
 
         if (password.length() < 8) {
-            return "Passwort nicht sicher. Passwort muss mindestens 8 Stellen haben!";
+            System.out.println("Passwort ist genug lang (über 8 Stellen.");
+            return false;
+
         }
 
-        return "Passwort ist genug lang (über 8 Stellen.";
+        System.out.println("Passwort ist genug lang (über 8 Stellen.");
+        return true;
     }
 
     public static boolean passwContainsNumbers(String password) {
@@ -102,11 +105,18 @@ public class Main {
         return true;
     }
 
-    public static String passwordValid(String password) {
+    public static boolean passwordValid(String password) {
         String sample = password;
+        if(passwLength(password) == true && passwContainsNumbers(password) == true &&
+                checkIfPasswContUpperAndLowerCase(password) == true && goodPassWord(password) && true){
+            System.out.println("Passwort gespeichert");
+            return true;
+        }
 
 
-        return "Passwort gespeichert";
+
+        System.out.println("Passwort nicht valide");
+        return false;
 
     }
 }
