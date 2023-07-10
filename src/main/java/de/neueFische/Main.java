@@ -1,12 +1,31 @@
 package de.neueFische;
 
 
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
         System.out.println(passwordValid("12345678"));
+
+//Aufgabe mit Getter und Setter (Objektorientierung, 10.07.23)
+
+        Student studX = new Student();
+
+        studX.setName("Johnny Knoxville");
+        studX.setAnzahlDerStudSemester(3);
+        studX.setMatrikelNo(23454545);
+        studX.setStudiengang("Angewandte Informatik");
+
+        Student studY = new Student("Josef Zimmermann", "Umwelttechnik", 34353, 5);
+
+        System.out.println(studY.getName()+" "+ studY.getStudiengang()+" "+studY.getMatrikelNo()+" "+studY.getAnzahlDerStudSemester());
+
     }
+
+
+
+//Ende der Aufgabe mit Getter und Setter (Objektorientierung, 10.07.23)
 
 
     public static boolean passwLength(String password) {
